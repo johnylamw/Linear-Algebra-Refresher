@@ -21,6 +21,7 @@ class Vector(object):
     def __eq__(self, v):
         return self.coordinates == v.coordinates
     
+    # 4. __add__, __sub__, __mul__ 
     def __add__(self, v):
         result = []
         for i in range(len(self.coordinates)):
@@ -39,6 +40,7 @@ class Vector(object):
             result.append(s * self.coordinates[i])
         return Vector(result)
     
+    # 6. Magnitude & Direction
     def magnitude(self): 
         result = 0
         for value in self.coordinates:
@@ -51,6 +53,8 @@ class Vector(object):
             return self * scalar
         except:
             raise Exception('Cannot normalize the zero vector')
+        
+    # 8. Dot Product & Angle
 
 # 4. Vector Plus, Minus and Scalar Multiply
 print(Vector([8.218, -9.341]) + Vector([-1.129, 2.111]))
@@ -62,3 +66,5 @@ print(Vector([-0.221, 7.437]).magnitude())
 print(Vector([8.813, -1.331, -6.247]).magnitude())
 print(Vector([5.581, -2.136]).normalized())
 print(Vector([1.996, 3.108, -4.554]).normalized())
+
+# 8. Dot Product & Angle

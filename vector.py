@@ -51,10 +51,13 @@ class Vector(object):
             return self * scalar
         except:
             raise Exception('Cannot normalize the zero vector')
-    
+
+# 4. Vector Plus, Minus and Scalar Multiply
 print(Vector([8.218, -9.341]) + Vector([-1.129, 2.111]))
 print(Vector([7.119, 8.215]) - Vector([-8.223, 0.878]))
 print(Vector([1.671, -1.012, -0.318]) * 7.41)
+
+# 6. Magntiude and Direction
 print(Vector([-0.221, 7.437]).magnitude())
 print(Vector([8.813, -1.331, -6.247]).magnitude())
 print(Vector([5.581, -2.136]).normalized())

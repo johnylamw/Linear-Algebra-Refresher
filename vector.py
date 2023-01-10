@@ -61,13 +61,21 @@ class Vector(object):
             sum += self.coordinates[point] * w.coordinates[point]
         return sum
 
-    # Returns the angle between two vectors in radians/degrees
     def angle_with(self, w, in_degrees=False):
-            result = math.acos(self.dot_product(w) / (self.magnitude() * w.magnitude())) # in radians
-            if in_degrees:
-                result *= 180/math.pi
-            return result
-
+        result = math.acos(self.dot_product(w) / (self.magnitude() * w.magnitude())) # in radians
+        if in_degrees:
+            result *= 180/math.pi
+        return result
+    
+    #10. Parallel & Orthogonal
+    def parallel_with(self, w):
+        
+        return False
+        
+    def orthogonal_with(self, v):
+        
+        return False
+    
 # TODO: Clean up exercises code to look better by instantiating vectors.
 # 4. Vector Plus, Minus and Scalar Multiply
 print('\nExercise 4:')
@@ -88,3 +96,17 @@ print(Vector([7.887, 4.138]).dot_product(Vector([-8.802, 6.776])))
 print(Vector([-5.955, -4.904, -1.874]).dot_product(Vector([-4.496, -8.755, 7.103])))
 print(Vector([3.183, -7.627]).angle_with(Vector([-2.668, 5.319])), 'radians')
 print(Vector([7.35, 0.221, 5.188]).angle_with(Vector([2.751, 8.259, 3.985]), True), 'degrees')
+
+# 10. Parallel & Orthgonal
+print('\nExercise 10:')
+print(Vector([-7.579, -7.88]).parallel_with(Vector([22.737, 23.64])))
+print(Vector([-7.579, -7.88]).orthogonal_with(Vector([22.737, 23.64])))
+print(Vector([-2.029, 9.97, 4.172]).parallel_with(Vector([-9.231, 6.639, -7.245])))
+print(Vector([-2.029, 9.97, 4.172]).orthogonal_with(Vector([-9.231, 6.639, -7.245])))
+print(Vector([-2.328, -7.284, -1.214]).parallel_with(Vector([-1.821, 1.072, -2.94])))
+print(Vector([-2.328, -7.284, -1.214]).orthogonal_with(Vector([-1.821, 1.072, -2.94])))
+print(Vector([2.118, 4.827]).parallel_with(Vector([0, 0])))
+print(Vector([2.118, 4.827]).orthogonal_with(Vector([0, 0])))
+
+
+
